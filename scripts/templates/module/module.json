@@ -1,0 +1,18 @@
+{
+  "id": "{{id}}",
+  "version": "0.1.0",
+  "coreApiRange": "^1.0.0",
+  "icon": "icon.svg",
+  "defaultEnabled": false,
+  "defaultQuickOrder": null,
+  "surfaces": {
+    "popup": true,
+    "workbench": true,
+    "settings": false,
+    "selectionActions": []
+  },
+  "permissions": {
+    "optionalPermissions": [],
+    "optionalHostPermissions": []
+  }
+}

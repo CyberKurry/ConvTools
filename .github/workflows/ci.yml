@@ -1,0 +1,122 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: convtools-ci-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
+        with:
+          node-version: '22.14.0'
+
+      - name: Set up pnpm
+        run: npm install --global pnpm@11.21.0
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Install Chromium and system dependencies
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Run quality checks
+        run: pnpm check
+
+  release:
+    needs: verify
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Check out verified commit and tags
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
+        with:
+          node-version: '22.14.0'
+
+      - name: Install dependencies
+        run: |
+          npm install --global pnpm@11.21.0
+          pnpm install --frozen-lockfile
+
+      - name: Determine release tag
+        id: version
+        run: |
+          tag=$(pnpm exec tsx scripts/version.ts tag)
+          printf 'tag=%s\n' "$tag" >> "$GITHUB_OUTPUT"
+
+      - name: Build, audit, and package browser extensions
+        env:
+          RELEASE_TAG: ${{ steps.version.outputs.tag }}
+        run: |
+          pnpm version:sync "$RELEASE_TAG"
+          pnpm build:chrome
+          pnpm build:edge
+          pnpm generated:check
+          pnpm manifest:audit
+
+          mkdir -p dist
+          for browser in chrome edge; do
+            (
+              cd ".output/${browser}-mv3"
+              node -e 'require("node:assert/strict").equal(require("./manifest.json").version, process.env.RELEASE_TAG.slice(1))'
+              zip -qr "../../dist/convtools-${browser}-${RELEASE_TAG}.zip" .
+            )
+          done
+
+      - name: Publish tag and Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.version.outputs.tag }}
+        run: |
+          main_sha=$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/main" --jq '.object.sha')
+          if [[ "$main_sha" != "$GITHUB_SHA" ]]; then
+            echo 'A newer commit superseded this run.'
+            exit 0
+          fi
+
+          if git show-ref --verify --quiet "refs/tags/$RELEASE_TAG"; then
+            test "$(git rev-parse "refs/tags/$RELEASE_TAG^{commit}")" = "$GITHUB_SHA"
+          else
+            gh api --method POST "repos/$GITHUB_REPOSITORY/git/refs" \
+              --raw-field "ref=refs/tags/$RELEASE_TAG" --raw-field "sha=$GITHUB_SHA" --silent
+          fi
+
+          if draft=$(gh release view "$RELEASE_TAG" --json isDraft --jq '.isDraft'); then
+            if [[ "$draft" == false ]]; then
+              echo "$RELEASE_TAG is already published."
+              exit 0
+            fi
+          else
+            gh release create "$RELEASE_TAG" --verify-tag --draft --generate-notes
+          fi
+
+          gh release upload "$RELEASE_TAG" --clobber \
+            "dist/convtools-chrome-$RELEASE_TAG.zip" "dist/convtools-edge-$RELEASE_TAG.zip"
+          gh release edit "$RELEASE_TAG" --draft=false --latest

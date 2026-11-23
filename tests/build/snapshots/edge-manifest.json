@@ -1,0 +1,39 @@
+{
+    "manifest_version": 3,
+    "name": "ConvTools",
+    "description": "Local-first base64 and timestamp conversion tools",
+    "version": "0.1.0",
+    "icons": {
+        "16": "/icon/16.png",
+        "32": "/icon/32.png",
+        "48": "/icon/48.png",
+        "128": "/icon/128.png"
+    },
+    "minimum_chrome_version": "144",
+    "incognito": "split",
+    "permissions": [
+        "storage",
+        "contextMenus",
+        "activeTab",
+        "scripting"
+    ],
+    "action": {
+        "default_title": "ConvTools",
+        "default_popup": "popup.html"
+    },
+    "commands": {
+        "_execute_action": {
+            "suggested_key": {
+                "default": "Alt+Shift+C"
+            },
+            "description": "Open the ConvTools quick popup"
+        }
+    },
+    "options_ui": {
+        "open_in_tab": true,
+        "page": "options.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    }
+}

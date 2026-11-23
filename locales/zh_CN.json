@@ -1,0 +1,99 @@
+{
+  "app": {
+    "name": "ConvTools",
+    "openWorkbench": "打开工作台",
+    "openSettings": "打开设置"
+  },
+  "popup": {
+    "title": "快捷工具",
+    "addModule": "添加模块",
+    "removeModule": "移除模块",
+    "moveLeft": "左移",
+    "moveRight": "右移",
+    "empty": "还没有快捷模块。"
+  },
+  "workbench": {
+    "title": "工作台",
+    "search": "搜索模块",
+    "unknownModule": "未知模块",
+    "handoffTitle": "转换结果",
+    "handoffLoading": "正在载入结果…",
+    "handoffMissing": "该结果已不可用。",
+    "copy": "复制",
+    "clearSearch": "清除搜索",
+    "moduleIdLabel": "模块",
+    "unknownDesc": "该模块不可用，可能已被停用或移除。",
+    "noModules": "还没有已启用的模块。请到设置中启用。",
+    "noModulesHint": "请到设置中启用 Base64 或时间戳模块。",
+    "history": "历史",
+    "historyEmpty": "该模块还没有历史记录。",
+    "historyLoadFailed": "无法加载历史记录。",
+    "historyClearFailed": "无法清除历史记录。"
+  },
+  "options": {
+    "title": "设置",
+    "general": "常规设置",
+    "modules": "模块",
+    "enable": "启用",
+    "disable": "停用",
+    "disableAndDelete": "停用并删除数据",
+    "history": "历史",
+    "historyEnabled": "在本机保存转换历史",
+    "language": "语言",
+    "languageAuto": "跟随浏览器",
+    "languageEn": "英文",
+    "languageZh": "简体中文",
+    "theme": "主题",
+    "themeSystem": "跟随系统",
+    "themeLight": "浅色",
+    "themeDark": "深色",
+    "timezone": "默认时区",
+    "quickModules": "快捷模块",
+    "revokePermission": "撤销权限",
+    "clearHistory": "清除历史",
+    "clearAllHistory": "清除全部历史",
+    "enabled": "已启用",
+    "disabled": "已停用",
+    "confirmDisableTitle": "停用并删除数据？",
+    "confirmDisableDesc": "将永久删除该模块在本机的设置与历史记录。",
+    "confirmClearTitle": "清除历史？",
+    "confirmClearDesc": "将永久删除该模块保存在本机的历史记录。",
+    "confirmClearAllDesc": "将永久删除所有模块保存在本机的历史记录。",
+    "confirm": "确认",
+    "cancel": "取消",
+    "sendPoliciesTitle": "始终允许的发送规则",
+    "sendPolicyEntry": "向 {origin} 发送{category}",
+    "clearSendPolicies": "撤销",
+    "sendPoliciesCleared": "已撤销全部始终允许规则。",
+    "clearAllHistoryConfirm": "删除所有模块的历史记录？此操作无法撤销。",
+    "actionFailed": "操作失败，请重试。"
+  },
+  "module": {
+    "failed": "该模块出错了。",
+    "retry": "重试",
+    "loadFailed": "该模块加载失败。请在模块列表中重试。"
+  },
+  "dialog": {
+    "close": "关闭"
+  },
+  "copy": {
+    "manual": "请选中结果并手动复制。"
+  },
+  "errors": {
+    "generic": "出现了问题。",
+    "selectionTooLarge": "选区过大，无法在此直接转换。请缩小选区后重试。"
+  },
+  "overlay": {
+    "copy": "复制",
+    "copied": "已复制！",
+    "expand": "展开",
+    "expandFailed": "无法打开工作台，请重试。",
+    "selectionTooLarge": "选区内容过大，无法转换。",
+    "close": "关闭",
+    "truncated": "预览已截断",
+    "expandFailed": "无法打开工作台。"
+  },
+  "common": {
+    "loading": "加载中…"
+  }
+}

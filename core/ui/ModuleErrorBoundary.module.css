@@ -1,0 +1,75 @@
+.card {
+  display: grid;
+  gap: var(--space-2-5);
+  padding: var(--space-3-5);
+  border: 1px solid var(--color-danger);
+  border-radius: var(--radius-lg);
+  background: var(--color-danger-subtle);
+  color: var(--color-danger-text);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.iconWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-danger-subtle);
+}
+
+.icon {
+  color: var(--color-danger);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-danger-text);
+}
+
+.detail {
+  margin: 0;
+  font-size: var(--font-size-xs);
+  opacity: 0.9;
+  font-family: var(--font-mono);
+}
+
+.retry {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1-5);
+  height: 1.625rem;
+  padding: 0 var(--space-2-5);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-danger);
+  background: var(--color-surface);
+  color: var(--color-danger-text);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-xs);
+  cursor: pointer;
+  transition: background-color var(--motion) var(--ease-default), color var(--motion) var(--ease-default);
+}
+
+.retry:hover {
+  background: var(--color-danger);
+  color: #ffffff;
+}
+
+.retry:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.btnIcon {
+  display: inline-flex;
+  align-items: center;
+}

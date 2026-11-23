@@ -1,0 +1,18 @@
+{
+  "id": "timestamp",
+  "version": "1.0.0",
+  "coreApiRange": "^1.0.0",
+  "icon": "icon.svg",
+  "defaultEnabled": true,
+  "defaultQuickOrder": 20,
+  "surfaces": {
+    "popup": true,
+    "workbench": true,
+    "settings": false,
+    "selectionActions": ["convert"]
+  },
+  "permissions": {
+    "optionalPermissions": [],
+    "optionalHostPermissions": []
+  }
+}

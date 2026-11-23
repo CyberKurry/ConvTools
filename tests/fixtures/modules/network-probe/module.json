@@ -1,0 +1,18 @@
+{
+  "id": "network-probe",
+  "version": "0.1.0",
+  "coreApiRange": "^1.0.0",
+  "icon": "icon.svg",
+  "defaultEnabled": false,
+  "defaultQuickOrder": null,
+  "surfaces": {
+    "popup": false,
+    "workbench": false,
+    "settings": false,
+    "selectionActions": []
+  },
+  "permissions": {
+    "optionalPermissions": [],
+    "optionalHostPermissions": ["https://api.example.com/*"]
+  }
+}

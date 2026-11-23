@@ -1,0 +1,10 @@
+.superpowers/
+docs/
+AGENTS.md
+.output/
+.wxt/
+dist/
+node_modules/
+coverage/
+playwright-report/
+test-results/

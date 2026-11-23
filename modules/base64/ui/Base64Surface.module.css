@@ -1,0 +1,406 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.panel, .filePanel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2-5);
+}
+
+.filePanel {
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+/* Card Wrapper */
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color var(--motion) var(--ease-default);
+}
+
+.card:focus-within {
+  border-color: var(--color-focus);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-1-5) var(--space-2-5);
+  background: var(--color-bg-subtle);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cardTitle {
+  font-size: 0.6875rem;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+}
+
+.stats {
+  font-size: var(--font-size-xs);
+  font-family: var(--font-mono);
+  color: var(--color-muted);
+}
+
+.outputToolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.limitBadge {
+  font-size: 0.6875rem;
+  font-weight: var(--font-weight-medium);
+  padding: 0.0625rem var(--space-1-5);
+  border-radius: var(--radius-full);
+  background: var(--color-accent-subtle);
+  color: var(--color-accent-text);
+}
+
+/* Textarea */
+.textarea {
+  width: 100%;
+  min-height: 5.5rem;
+  padding: var(--space-2);
+  border: none;
+  background: transparent;
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-sm);
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.textarea:focus {
+  outline: none;
+}
+
+.textareaOutput {
+  background: var(--color-bg-subtle);
+  color: var(--color-text);
+}
+
+/* Settings Row */
+.settingsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding: var(--space-1-5) var(--space-2-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.formatLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1-5);
+}
+
+.formatLabelText {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+}
+
+.select {
+  height: 1.625rem; /* 26px */
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-subtle);
+  color: var(--color-text);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-normal);
+  cursor: pointer;
+  transition: border-color var(--motion) var(--ease-default);
+}
+
+.select:hover {
+  border-color: var(--color-border-hover);
+}
+
+.select:focus-visible {
+  outline: none;
+  border-color: var(--color-focus);
+  box-shadow: var(--focus-ring);
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1-5);
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox {
+  width: 0.9375rem;
+  height: 0.9375rem;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+}
+
+.checkboxText {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+}
+
+/* Actions Toolbar */
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-1-5);
+}
+
+.primaryActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1-5);
+}
+
+.secondaryActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+/* Alerts and Banners */
+.errorAlert {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-2-5);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-danger);
+  background: var(--color-danger-subtle);
+  color: var(--color-danger-text);
+  font-size: var(--font-size-xs);
+}
+
+.errorIcon {
+  flex-shrink: 0;
+}
+
+.errorText {
+  margin: 0;
+  font-weight: var(--font-weight-medium);
+}
+
+.correctionsBanner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1-5);
+  padding: var(--space-1-5) var(--space-2-5);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-warning);
+  background: var(--color-warning-subtle);
+  color: var(--color-warning-text);
+  font-size: var(--font-size-xs);
+}
+
+.correctionsTitle {
+  font-weight: var(--font-weight-bold);
+}
+
+.correctionsList {
+  font-family: var(--font-mono);
+}
+
+.noticeBanner {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-accent);
+  background: var(--color-accent-subtle);
+  color: var(--color-accent-text);
+}
+
+.noticeText {
+  margin: 0;
+  font-size: var(--font-size-xs);
+}
+
+.copyHint {
+  margin: 0;
+  font-size: var(--font-size-xs);
+  color: var(--color-muted);
+}
+
+.openWorkbenchLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--font-size-xs);
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+}
+
+.openWorkbenchLink:hover {
+  text-decoration: underline;
+}
+
+/* Dropzone */
+.dropzone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-5) var(--space-3);
+  background: var(--color-bg-subtle);
+  text-align: center;
+  transition: border-color var(--motion) var(--ease-default), background-color var(--motion) var(--ease-default);
+}
+
+.dropzone:hover, .dropzoneActive {
+  border-color: var(--color-accent);
+  background: var(--color-accent-subtle);
+}
+
+.dropzoneContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1-5);
+}
+
+.dropzoneIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  color: var(--color-accent);
+  border: 1px solid var(--color-border);
+}
+
+.dropzoneText {
+  margin: 0;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.fileInputLabel {
+  position: relative;
+  cursor: pointer;
+}
+
+.fileInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.fileInputButton {
+  display: inline-flex;
+  align-items: center;
+  height: 1.625rem;
+  padding: 0 var(--space-2-5);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  transition: border-color var(--motion) var(--ease-default), color var(--motion) var(--ease-default);
+}
+
+.fileInputButton:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.progressRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+/* File action segment + format row */
+.segmented {
+  display: inline-flex;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.segmentButton {
+  border: none;
+  background: transparent;
+  color: var(--color-muted);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.segmentButton:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 1px;
+}
+
+.segmentActive {
+  background: var(--color-accent);
+  color: var(--color-accent-contrast, #ffffff);
+}
+
+.formatField {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.actionRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-3);
+}
+
+.corrections {
+  margin: 0;
+  font-size: var(--font-size-xs);
+  color: var(--color-muted);
+}

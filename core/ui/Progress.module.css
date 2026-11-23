@@ -1,0 +1,32 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2-5);
+  width: 100%;
+}
+
+.progress {
+  flex: 1;
+  height: 0.375rem; /* 6px sleek ergonomic track */
+  border-radius: var(--radius-full);
+  background: var(--color-border);
+  overflow: hidden;
+  position: relative;
+}
+
+.bar {
+  display: block;
+  height: 100%;
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+  transition: width var(--motion) var(--ease-default);
+}
+
+.percentage {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-mono);
+  color: var(--color-muted);
+  min-width: 2.25rem;
+  text-align: right;
+}

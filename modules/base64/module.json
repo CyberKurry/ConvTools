@@ -1,0 +1,18 @@
+{
+  "id": "base64",
+  "version": "1.0.0",
+  "coreApiRange": "^1.0.0",
+  "icon": "icon.svg",
+  "defaultEnabled": true,
+  "defaultQuickOrder": 10,
+  "surfaces": {
+    "popup": true,
+    "workbench": true,
+    "settings": false,
+    "selectionActions": ["encode", "decode"]
+  },
+  "permissions": {
+    "optionalPermissions": [],
+    "optionalHostPermissions": []
+  }
+}

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- Clean solid developer blue squircle -->
+  <rect x="16" y="16" width="224" height="224" rx="52" fill="#0969da" />
+
+  <!-- Clean inner border line -->
+  <rect x="18" y="18" width="220" height="220" rx="50" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.2" />
+
+  <!-- Geometric conversion hub & arrows -->
+  <g transform="translate(128, 128)">
+    <!-- Central guideline circle -->
+    <circle r="60" fill="none" stroke="#ffffff" stroke-width="6" stroke-opacity="0.2" />
+
+    <!-- Top Right Arrow Arc -->
+    <path d="M -48 -14 A 50 50 0 0 1 48 -14" fill="none" stroke="#ffffff" stroke-width="16" stroke-linecap="round" />
+    <path d="M 34 -36 L 56 -14 L 34 8" fill="none" stroke="#ffffff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Bottom Left Arrow Arc -->
+    <path d="M 48 18 A 50 50 0 0 1 -48 18" fill="none" stroke="#ffffff" stroke-width="16" stroke-linecap="round" />
+    <path d="M -34 40 L -56 18 L -34 -4" fill="none" stroke="#ffffff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Center pivot -->
+    <circle r="12" fill="#ffffff" />
+    <circle r="6" fill="#0969da" />
+  </g>
+</svg>

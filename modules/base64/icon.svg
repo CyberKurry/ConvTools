@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="12" fill="#0969da" />
+  <!-- Text '64' styled -->
+  <g fill="#ffffff" transform="translate(11, 15)">
+    <!-- 6 -->
+    <path d="M18 4 C16 1, 10 1, 6 6 C2 11, 2 24, 7 30 C11 34, 18 34, 20 28 C22 22, 19 16, 12 16 C8 16, 6 18, 5 21 C5 14, 8 8, 14 6 L18 4 Z M8 25 C8 21, 11 19, 14 20 C16 21, 17 24, 16 27 C15 30, 11 31, 9 29 C8 28, 8 26, 8 25 Z" />
+    <!-- 4 -->
+    <path d="M37 22 L37 4 L31 4 L23 20 L23 25 L31 25 L31 32 L37 32 L37 25 L41 25 L41 20 L37 20 Z M31 20 L28 20 L31 12 L31 20 Z" />
+  </g>
+</svg>

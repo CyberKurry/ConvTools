@@ -1,0 +1,99 @@
+{
+  "app": {
+    "name": "ConvTools",
+    "openWorkbench": "Open workbench",
+    "openSettings": "Open settings"
+  },
+  "popup": {
+    "title": "Quick tools",
+    "addModule": "Add module",
+    "removeModule": "Remove module",
+    "moveLeft": "Move left",
+    "moveRight": "Move right",
+    "empty": "No quick modules yet."
+  },
+  "workbench": {
+    "title": "Workbench",
+    "search": "Search modules",
+    "unknownModule": "Unknown module",
+    "handoffTitle": "Conversion result",
+    "handoffLoading": "Loading result…",
+    "handoffMissing": "This result is no longer available.",
+    "copy": "Copy",
+    "clearSearch": "Clear search",
+    "moduleIdLabel": "Module",
+    "unknownDesc": "This module is not available. It may be disabled or removed.",
+    "noModules": "No modules are enabled. Enable one in settings.",
+    "noModulesHint": "Enable Base64 or Timestamp in settings to start converting.",
+    "history": "History",
+    "historyEmpty": "No history yet for this module.",
+    "historyLoadFailed": "History could not be loaded.",
+    "historyClearFailed": "History could not be cleared."
+  },
+  "options": {
+    "title": "Settings",
+    "general": "General",
+    "modules": "Modules",
+    "enable": "Enable",
+    "disable": "Disable",
+    "disableAndDelete": "Disable and delete data",
+    "history": "History",
+    "historyEnabled": "Save conversion history on this device",
+    "language": "Language",
+    "languageAuto": "Match browser",
+    "languageEn": "English",
+    "languageZh": "Simplified Chinese",
+    "theme": "Theme",
+    "themeSystem": "Match system",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "timezone": "Default timezone",
+    "quickModules": "Quick modules",
+    "revokePermission": "Revoke permission",
+    "clearHistory": "Clear history",
+    "clearAllHistory": "Clear all history",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "confirmDisableTitle": "Disable and delete data?",
+    "confirmDisableDesc": "This permanently deletes this module's settings and history on this device.",
+    "confirmClearTitle": "Clear history?",
+    "confirmClearDesc": "This permanently deletes this module's locally stored history.",
+    "confirmClearAllDesc": "This permanently deletes all locally stored history.",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "sendPoliciesTitle": "Always-allow send rules",
+    "sendPolicyEntry": "Send {category} to {origin}",
+    "clearSendPolicies": "Revoke",
+    "sendPoliciesCleared": "Always-allow rules revoked.",
+    "clearAllHistoryConfirm": "Delete the saved history of every module? This cannot be undone.",
+    "actionFailed": "The action failed. Please try again."
+  },
+  "module": {
+    "failed": "This module failed.",
+    "retry": "Retry",
+    "loadFailed": "This module could not be loaded. Retry from the module list."
+  },
+  "dialog": {
+    "close": "Close"
+  },
+  "copy": {
+    "manual": "Select the result and copy it manually."
+  },
+  "errors": {
+    "generic": "Something went wrong.",
+    "selectionTooLarge": "The selection is too large to convert here. Select a smaller passage."
+  },
+  "overlay": {
+    "copy": "Copy",
+    "copied": "Copied!",
+    "expand": "Expand",
+    "expandFailed": "Could not open the workbench. Try again.",
+    "selectionTooLarge": "The selection is too large to convert.",
+    "close": "Close",
+    "truncated": "Preview truncated",
+    "expandFailed": "Could not open the workbench."
+  },
+  "common": {
+    "loading": "Loading…"
+  }
+}
